@@ -1,5 +1,6 @@
 public class ExemploForArray {
- public static void main(String[] args) {
+    
+public static void main(String[] args) {
     String alunos [] = {"Felipe", "jonas", "julia", "maria"};
 
     for(int x =0; x < alunos.length; x ++){ // for (inicialização; validação; incremento)
@@ -10,5 +11,5 @@ public class ExemploForArray {
     for (String aluno: alunos){
         System.out.println("o aluno é: " + aluno);
     }
- }
+}
 }
