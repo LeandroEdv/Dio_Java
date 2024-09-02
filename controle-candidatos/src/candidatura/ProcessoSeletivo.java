@@ -6,8 +6,19 @@ public class ProcessoSeletivo {
 	
 	public static void main(String[] args) {
 		// System.out.println("Processo seletivo");
+		imprimirSelecionados();
 		
+	}
+	static void imprimirSelecionados() {
+		String [] candidatos = {"FELIPE","MARCIA","JULIANA","PAULO","ALGUSTO"};
 		
+		for(int indice =0; indice < candidatos.length; indice ++) {
+			System.out.println("O candidato de numero "+ (indice + 1) + " é " + candidatos[indice]);
+		}
+		// Forma abreviada
+		for (String candidato: candidatos) {
+			System.out.println("candidato selecionado: "+ candidato);
+		}
 	}
 	
 	static void selecaoCandidatos() {
