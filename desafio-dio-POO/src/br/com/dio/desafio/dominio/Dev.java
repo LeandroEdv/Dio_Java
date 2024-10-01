@@ -20,11 +20,13 @@ public class Dev {
             this.conteudosConcluidos.add((conteudo.get()));
             this.conteudosInscritos.remove(conteudo.get());
         }else{
-            System.err.println("Você não tem conteudos Matriculados");
+            System.err.println("Você não tem conteúdos Matriculados");
         }
     }
     public double calcularTotalXp(){
         return this.conteudosConcluidos.stream()
+                .mapToDouble(conteudo -> conteudo.calcularXp())
+                .sum();
     }
 
     public String getNome() {
@@ -35,20 +37,20 @@ public class Dev {
         this.nome = nome;
     }
 
-    public Set<Conteudo> getCoteudosInscritos() {
-        return coteudosInscritos;
+    public Set<Conteudo> getConteudosInscritos() {
+        return conteudosInscritos;
     }
 
     public void setCoteudosInscritos(Set<Conteudo> coteudosInscritos) {
-        this.coteudosInscritos = coteudosInscritos;
+        this.conteudosInscritos = coteudosInscritos;
     }
 
-    public Set<Conteudo> getCoteudosConcluidos() {
-        return coteudosConcluidos;
+    public Set<Conteudo> getConteudosConcluidos() {
+        return conteudosConcluidos;
     }
 
     public void setCoteudosConcluidos(Set<Conteudo> coteudosConcluidos) {
-        this.coteudosConcluidos = coteudosConcluidos;
+        this.conteudosConcluidos = coteudosConcluidos;
     }
 
     @Override
@@ -56,11 +58,11 @@ public class Dev {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Dev dev = (Dev) o;
-        return Objects.equals(nome, dev.nome) && Objects.equals(coteudosInscritos, dev.coteudosInscritos) && Objects.equals(coteudosConcluidos, dev.coteudosConcluidos);
+        return Objects.equals(nome, dev.nome) && Objects.equals(conteudosInscritos, dev.conteudosInscritos) && Objects.equals(conteudosConcluidos, dev.conteudosConcluidos);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nome, coteudosInscritos, coteudosConcluidos);
+        return Objects.hash(nome, conteudosInscritos, conteudosConcluidos);
     }
 }
